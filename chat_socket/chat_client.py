@@ -2,6 +2,8 @@ import socket
 import threading
 import pickle
 
+from termcolor import colored
+
 # Define the Response class
 class Response:
     def __init__(self, name, message):
@@ -19,7 +21,7 @@ def receive_responses(client_socket):
             
             # Unpickle the data and print the response
             response = pickle.loads(data)
-            print(response.name + ": " + response.message)
+            print(colored(response.name, 'blue') + ": " + colored(response.message, 'green'))
         except:
             print("Error receiving response from server.")
             break
