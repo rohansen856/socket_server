@@ -43,7 +43,7 @@ def main(client):
 def searchForServer():
     host = socket.gethostname()
     ipv4_addr = socket.gethostbyname(host)
-    client.connect((ipv4_addr, port))
+    client.connect(('192.168.31.232', port))
 
 if __name__ == "__main__":
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
